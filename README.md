@@ -6,7 +6,7 @@ A structured repository to learn and practice Data Structures & Algorithms in C+
 
 | # | Topic | Status |
 |---|-------|--------|
-| 01 | STL | ⬜ |
+| 01 | STL | 🔄 |
 | 02 | Complexity Analysis | ⬜ |
 | 03 | Arrays | ⬜ |
 | 04 | Matrix | ⬜ |
