@@ -98,7 +98,7 @@ void printArray(int arr[], int n){
 // declared outside main -> zero-initialized automatically (no memset needed)
 // also avoids stack overflow for large sizes
 int globalDp[1000][1000];                  // ✅ all 0s, safe for large sizes
-
+// max length is 10^7 globally and 10^6 inside int main
 int main(){
     explain1DArray();
     explain2DArray();
