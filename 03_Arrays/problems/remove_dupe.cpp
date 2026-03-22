@@ -10,6 +10,7 @@ void optimal (int arr[], int n){
         if(arr[i2] != arr[i1]){
             arr[++i1] = arr[i2];
         } 
+        
     }
     cout << i1+1 << endl;
 }
