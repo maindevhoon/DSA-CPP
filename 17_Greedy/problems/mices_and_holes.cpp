@@ -1,10 +1,16 @@
+//You are given positions of mice and holes on a line.
+// Each mouse can move left or right, and each hole can hold only one mouse.
+
+// 👉 The goal is to assign each mouse to a hole such that
+// the maximum time taken by any mouse (distance to its hole) is minimized.
+
 #include <bits/stdc++.h>
 using namespace std;
 
 class Solution {
   public:
     int assignHole(vector<int>& mices, vector<int>& holes) {
-        // code here
+    
         sort(mices.begin(),mices.end());
         sort(holes.begin(),holes.end());
         int max_sol = 0;
