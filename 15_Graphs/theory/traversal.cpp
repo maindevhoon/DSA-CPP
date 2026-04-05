@@ -24,6 +24,15 @@ void printer(vector<vector<int>> &g){
 
 // BFS
 void bfs(int start, vector<vector<int>> &g) {
+    // Each vertex is visited exactly once → O(V)
+    // Each edge is explored exactly once → O(E)
+
+    // Total Time = O(V + E)
+
+    // visited array → O(V)
+    // queue (in worst case stores all vertices) → O(V)
+
+    // Total Space = O(V)
     vector<bool> visited(g.size(), false);
     queue<int> q;
 
@@ -45,8 +54,38 @@ void bfs(int start, vector<vector<int>> &g) {
     }
 }
 
+// Recursive DFS
+void dfs(int node, vector<vector<int>> &g, vector<bool> &visited, vector<int> &ans){
+    // Each vertex visited once → O(V)
+    // Each edge explored once → O(E)
+
+    // Total Time = O(V + E)
+
+    // visited array → O(V)
+    // recursion stack (worst case: skewed graph) → O(V)
+
+    // Total Space = O(V)
+    visited[node] = true;
+    ans.push_back(node);
+
+    for(int neighbour : g[node]){
+        if(!visited[neighbour]){
+            dfs(neighbour, g, visited, ans);
+        }
+    }
+}
+
 // Iterative DFS
 vector<int> iterative_dfs(int start, vector<vector<int>> &g){
+
+    // Same as BFS/DFS
+
+    // Total Time = O(V + E)    
+
+    // visited array → O(V)
+    // stack (worst case stores all vertices) → O(V)
+
+    // Total Space = O(V)
     vector<int> ans;
     vector<bool> visited(g.size(), false);
     stack<int> s;
@@ -69,16 +108,4 @@ vector<int> iterative_dfs(int start, vector<vector<int>> &g){
         }
     }
     return ans;
-}
-
-// Recursive DFS
-void dfs(int node, vector<vector<int>> &g, vector<bool> &visited, vector<int> &ans){
-    visited[node] = true;
-    ans.push_back(node);
-
-    for(int neighbour : g[node]){
-        if(!visited[neighbour]){
-            dfs(neighbour, g, visited, ans);
-        }
-    }
 }
